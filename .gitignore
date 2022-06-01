@@ -1,1 +1,2 @@
-db.sqlite3pip freeze>
+db.sqlite3
+vlog_app/migrations
