@@ -1,3 +1,4 @@
 db.sqlite3
 vlog_app/migrations
 media
+__pycache__/
