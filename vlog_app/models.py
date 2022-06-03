@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+
 class Post(models.Model):
     title = models.CharField(
         max_length=70,
@@ -9,11 +11,11 @@ class Post(models.Model):
     )
     img = models.ImageField(
         verbose_name='Изображение',
-        upload_to='meida/%Y/%m/%d/',
+        upload_to='photos/%Y/%m/%d/',
     )
     description = models.TextField(
         max_length=255,
-        verbose_name='Компинтарий к посту'
+        verbose_name='Комментарий к посту'
     )
     is_draft = models.BooleanField(
         verbose_name='Черновик',
@@ -34,5 +36,9 @@ class Post(models.Model):
     )
     user_id = models.ForeignKey(
         User,
+        verbose_name='Пользователь',
         on_delete=models.PROTECT
     )
+
+    def __str__(self) -> str:
+        return str(self.title)
