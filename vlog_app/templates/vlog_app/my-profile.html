@@ -46,7 +46,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary "><a href="{% url 'post-detail' post.id %}">View</a></button>
-                  {% if request.user.id == post.user.id and request.user.is_authenticated%}
+                  {% if request.user__id.id == post.user__id.id and request.user.is_authenticated%}
                     <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'edit-post' post.id %}">Edit</a></button>
                   {% endif %}
                 </div>
