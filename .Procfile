@@ -1,1 +1,1 @@
-web: gunicorn vlog.wsgi --log-file-
+web: gunicorn vlog.wsgi --log-file -
