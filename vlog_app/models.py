@@ -126,12 +126,12 @@ class SiteInfo(models.Model):
         return super().save(*args, **kwargs)
 
 
-# SITE_INFO = {
-#     'contacts': Contact.objects.all(),
-#     'site_info': SiteInfo.objects.all().first()
-# }
-
 SITE_INFO = {
-    'contacts': None,
-    'site_info': None
+    'contacts': Contact.objects.all(),
+    'site_info': SiteInfo.objects.all().first()
 }
+
+# SITE_INFO = {
+#     'contacts': None,
+#     'site_info': None
+# }
