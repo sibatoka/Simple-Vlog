@@ -76,7 +76,7 @@ class Contact(models.Model):
         return str(self.name)
 
     def save(self, *args, **kwargs):
-        SITE_INFO["contacts_info"] = self.objects.all
+        SITE_INFO["contacts_info"] = Contact.objects.all()
         return super().save(*args, **kwargs)
 
 
