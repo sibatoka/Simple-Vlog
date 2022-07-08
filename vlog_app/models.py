@@ -3,14 +3,6 @@ from django.contrib.auth.models import User
 from django_resized import ResizedImageField
 
 
-class SiteInformation:
-    def __init__(self):
-        self.contacts = None
-        self.site_info = None
-
-
-
-
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(
@@ -84,7 +76,7 @@ class Contact(models.Model):
         return str(self.name)
 
     def save(self, *args, **kwargs):
-        SITE_INFO.contacts_info = self.objects.all
+        SITE_INFO["contacts_info"] = self.objects.all
         return super().save(*args, **kwargs)
 
 
@@ -122,7 +114,7 @@ class SiteInfo(models.Model):
         return str(self.name)
 
     def save(self, *args, **kwargs):
-        SITE_INFO.site_info = self
+        SITE_INFO["site_info"] = self
         return super().save(*args, **kwargs)
 
 
